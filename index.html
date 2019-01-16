@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--
+      New Perspectives on HTML5 and CSS3, 7th Edition
+      Tutorial 7
+      Case Problem 1
+
+      CGIP Registration Form
+      Author: Todd Adcox Jr
+      Date:  1-15-19 
+
+      Filename:   cg_register.html
+   -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CGIP Registration Form</title>
+    <link href="cg_base.css" rel="stylesheet" />
+    <link href="cg_styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="cg_forms.css" />
+    <link rel="stylesheet" href="cg_validate.css" />
+    <script src="cg_script.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="cg_logo.png" alt="Computer Graphics and Image Processing" id="logoimg" />
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">home page</a></li>
+            <li><a href="#">keynote address</a></li>
+            <li><a href="#">speakers</a></li>
+            <li class="newgroup"><a href="#">general session</a></li>
+            <li><a href="#">abstracts</a></li>
+            <li><a href="#">programs</a></li>
+            <li><a href="#">workshops</a></li>
+            <li class="newgroup"><a href="#">committees</a></li>
+            <li><a href="#">executive session</a></li>
+            <li><a href="#">advisory council</a></li>
+            <li class="newgroup"><a href="#">travel info</a></li>
+            <li><a href="#">accommodations</a></li>
+            <li><a href="#">banquet</a></li>
+            <li><a href="#">family attractions</a></li>
+            <li class="newgroup"><a href="#">registration</a></li>
+            <li class="newgroup"><a href="#">ACGIP home page</a></li>
+            <li><a href="#">tour Sante Fe</a></li>
+            <li><a href="#">links</a></li>
+        </ul>
+    </nav>
+
+    <!-- 
+
+
+12. Save your changes to the style sheet and then open cg_register.html in your browser. Verify that the content and layout of the form resemble that shown in Figure 7-61. Verify that you must enter all required field values in the proper format for the form to be submitted successfully. Confirm that the browser performs inline validation on the firstName, lastName, address, email, phoneNumber, and acgipID fields.
+ -->
+
+    <section>
+        <h1>Conference Registration Form</h1>
+        <p>Required Item (*)</p>
+        <form action="http://www.example.com/cg/register" method="POST">
+            <label for="titleBox">Title</label>
+            <input name="title" type="text" id="titleBox" list="titleList" />
+
+            <datalist id="titleList">
+                <option value="Mr."></option>
+                <option value="Mrs."></option>
+                <option value="Ms."></option>
+                <option value="Prof."></option>
+                <option value="Dr."></option>
+                <option value="Assist. Prof"></option>
+                <option value="Assoc."></option>
+            </datalist>
+
+            <label for="fnBox">First Name*</label>
+            <input name="firstName" type="text" id="fnBox" required />
+
+            <label for="lnBox">Last Name*</label>
+            <input name="lastName" type="text" id="lnBox" required />
+
+            <label for="addBox"> Address*</label>
+            <input name="address" type="text" id="addBox" required />
+
+            <label for="groupBox">Company or University</label>
+            <input name="group" type="text" id="groupBox" />
+
+            <label for="mailBox">E-mail*</label>
+            <input name="email" type="email" id="mailBox" required />
+
+            <label for="phoneBox">Phone Number*</label>
+            <input name="phoneNumber" type="tel" id="phoneBox" placeholder="(nnn) nnn-nnnn" pattern=" ^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$"
+                required />
+
+            <label for="idBox">ACGIP Membership Number</label>
+            <input name="acgipID" type="text" id="idBox" placeholder="acgip-nnnnnn" pattern=" ^acgip\-\d{6}$ " />
+
+            <label for="regList">Registration List</label>
+            <select>
+                <option value="">ACGIP Member ($695)</option>
+                <option value="">Non-Member ($795)</option>
+                <option value="">Student ($310)</option>
+                <option value="">Poster ($95)</option>
+                <option value="">Guest ($35)</option>
+            </select>
+            <p>
+                <input type="submit" value="continue">
+            </p>
+        </form>
+    </section>
+
+    <!-- 
+    9. Within the form, add a paragraph containing a submit button with the text continue. 
+    -->
+
+    <aside>
+        <dl>
+            <dt>ACGIP Member ($695)</dt>
+            <dd>Eligible to attend all sessions and banquet</dd>
+            <dt>Non-Member ($795)</dt>
+            <dd>Eligible to attend all sessions and banquet</dd>
+            <dt>Student ($310)</dt>
+            <dd>Eligible to attend all sessions. <a href="#">Proof</a> of
+                student status required</dd>
+            <dt>Poster ($95)</dt>
+            <dd>Eligible to attend display hall and vendor stations</dd>
+            <dt>Guest ($35)</dt>
+            <dd>Eligible to attend banquet only</dd>
+        </dl>
+    </aside>
+
+    <footer>
+        Association of Computer Graphics and Image Processing
+    </footer>
+</body>
+
+</html>
