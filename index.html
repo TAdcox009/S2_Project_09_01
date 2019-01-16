@@ -21,6 +21,7 @@
     <link href="cg_styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="cg_forms.css" />
     <link rel="stylesheet" href="cg_validate.css" />
+    <!-- this is linking  javascript from a file  -->
     <script src="cg_script.js"></script>
 </head>
 
@@ -51,18 +52,17 @@
         </ul>
     </nav>
 
-    <!-- 
-
-
-12. Save your changes to the style sheet and then open cg_register.html in your browser. Verify that the content and layout of the form resemble that shown in Figure 7-61. Verify that you must enter all required field values in the proper format for the form to be submitted successfully. Confirm that the browser performs inline validation on the firstName, lastName, address, email, phoneNumber, and acgipID fields.
- -->
-
     <section>
         <h1>Conference Registration Form</h1>
         <p>Required Item (*)</p>
+
+        <!-- this is a web form, its using the post method which sends the form data in its own separate data stream. The label is giving the input box a title of "Title".
+ -->
         <form action="http://www.example.com/cg/register" method="POST">
             <label for="titleBox">Title</label>
             <input name="title" type="text" id="titleBox" list="titleList" />
+
+            <!-- Datalist is giving the user different option values to choose from, the user can choose only 1 of the following items. -->
 
             <datalist id="titleList">
                 <option value="Mr."></option>
@@ -74,18 +74,23 @@
                 <option value="Assoc."></option>
             </datalist>
 
+            <!-- The label is giving the input box a title of "First Name*". This field is required for the user to move on so if they dont answer this they can't submit the form.  -->
             <label for="fnBox">First Name*</label>
             <input name="firstName" type="text" id="fnBox" required />
 
+            <!-- The label is giving the input box a title of "Last Name*". This field is required for the user to move on so if they dont answer this they can't submit the form.  -->
             <label for="lnBox">Last Name*</label>
             <input name="lastName" type="text" id="lnBox" required />
 
+            <!-- The label is giving the input box a title of "Address*". This field is required for the user to move on so if they dont answer this they can't submit the form.  -->
             <label for="addBox"> Address*</label>
             <input name="address" type="text" id="addBox" required />
 
+            <!-- The label is giving the input box a title of "Company or University"". This field is not required for the user to move on so if they don't answer it they can still submit the form as long as all the other required fields are filled out.  -->
             <label for="groupBox">Company or University</label>
             <input name="group" type="text" id="groupBox" />
 
+            <!-- The label is giving the input box a title of "E-mail*". This field is required for the user to move on so if they dont answer this they can't submit the form.  -->
             <label for="mailBox">E-mail*</label>
             <input name="email" type="email" id="mailBox" required />
 
@@ -93,9 +98,11 @@
             <input name="phoneNumber" type="tel" id="phoneBox" placeholder="(nnn) nnn-nnnn" pattern=" ^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$"
                 required />
 
+            <!-- The label is giving the input box a title of "ACGIP Membership Number". This field is not required for the user to move on so if they don't answer it they can still submit the form as long as all the other required fields are filled out.  -->
             <label for="idBox">ACGIP Membership Number</label>
             <input name="acgipID" type="text" id="idBox" placeholder="acgip-nnnnnn" pattern=" ^acgip\-\d{6}$ " />
 
+            <!-- The label is giving the select box a title of "Registration List". This field is not required for the user to move on so if they don't answer it they can still submit the form as long as all the other required fields are filled out.. The select elements is giving the user options to choose from they can only choose 1  -->
             <label for="regList">Registration List</label>
             <select>
                 <option value="">ACGIP Member ($695)</option>
@@ -104,15 +111,13 @@
                 <option value="">Poster ($95)</option>
                 <option value="">Guest ($35)</option>
             </select>
+
+            <!-- submitting the web form-->
             <p>
                 <input type="submit" value="continue">
             </p>
         </form>
     </section>
-
-    <!-- 
-    9. Within the form, add a paragraph containing a submit button with the text continue. 
-    -->
 
     <aside>
         <dl>
